@@ -6,7 +6,7 @@ import * as authenticationService from '../../domain/user/authentication-service
  * @param {import('next').NextApiRequest} req
  * @param {import('next').NextApiResponse} res
 */
-export default (req, res) => {
+export default function signIn(req, res) {
     const accountNameSchema = z.string().regex(/^[a-zA-Z0-9_]+$/, {message: 'Account name is invalid'});
     const passwordSchema = z.string().regex(/^[a-zA-Z0-9_]+$/, {message: 'Password name is invalid'});
     let body = JSON.parse(req.body);
@@ -20,7 +20,7 @@ export default (req, res) => {
             message: error.errors[0].message
         })
     }
-    authenticationService.autheticate(accountName, password)
+    authenticationService.authenticate(accountName, password)
         .then(session => {
             const cookie = serialize('session', session, {
                 httpOnly: true,
