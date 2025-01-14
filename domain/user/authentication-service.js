@@ -7,7 +7,7 @@ import bcrypt from "bcrypt";
 
 
 
-export async function autheticate(accountName, password) {
+export async function authenticate(accountName, password) {
     /** @type {Array} */
     let result = await userRepository.findAccountByName(accountName);
     if (result.length !== 1) {

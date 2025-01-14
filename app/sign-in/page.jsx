@@ -31,7 +31,7 @@ export default function SignIn() {
 
     return (
         <div className="d-flex vh-100 flex-column align-items-center justify-content-center">
-            <h1>Virtualbank</h1>
+            <h1>Virtual Bank</h1>
             <form className={"border p-3"}>
                 <div className="mb-3">
                     <label htmlFor="accountName">Account name</label>
