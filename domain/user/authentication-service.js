@@ -9,11 +9,13 @@ import bcrypt from "bcrypt";
 
 export async function autheticate(accountName, password) {
     /** @type {Array} */
-    let result = await userRepository.findAccountByName(accountName, password);
+    let result = await userRepository.findAccountByName(accountName);
     if (result.length !== 1) {
+        console.log("User not found");
         throw Error('Authenticate failed')
     }
     if (!bcrypt.compareSync(password, result[0].account_pwd)) {
+        console.log("Wrong password");
         throw Error('Authenticate failed')
     }
     let session = uuid()
