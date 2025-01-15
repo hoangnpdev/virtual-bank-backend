@@ -1,5 +1,5 @@
-import * as userRepository from '@/domain/user/user-repository'
-import * as authenticationService from '@/domain/user/authentication-service'
+import * as userRepository from '@/domain/account/account-repository'
+import * as authenticationService from '@/domain/account/authentication-service'
 
 
 

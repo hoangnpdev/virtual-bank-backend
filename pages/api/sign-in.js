@@ -1,6 +1,6 @@
 import { serialize } from 'cookie'
 import { z } from 'zod'
-import * as authenticationService from '../../domain/user/authentication-service'
+import * as authenticationService from '@/domain/account/authentication-service'
 
 /**
  * @param {import('next').NextApiRequest} req

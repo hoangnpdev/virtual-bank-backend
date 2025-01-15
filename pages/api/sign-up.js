@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import * as userService from '@/domain/user/user-service'
+import * as userService from '@/domain/account/account-service'
 
 
 /**

@@ -1,4 +1,4 @@
-import * as userRepository from './user-repository';
+import * as userRepository from './account-repository';
 import bcrypt from 'bcrypt';
 
 
@@ -12,4 +12,16 @@ export async function createAccount(userInfo) {
     let salt = bcrypt.genSaltSync(10);
     let hashedPassword = bcrypt.hashSync(userInfo.password, salt);
     return await userRepository.createAccount(userInfo.accountName, hashedPassword);
+}
+
+export async function transferMoney(transaction) {
+
+}
+
+export async function checkBalance() {
+
+}
+
+export async function checkAccountExistent(accountName) {
+
 }
