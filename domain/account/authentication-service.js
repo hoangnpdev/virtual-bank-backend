@@ -29,7 +29,7 @@ export async function authenticate(accountName, password) {
 }
 
 export async function currentUser() {
-    let cookie = (await cookies()).get('session').value;
+    let session = (await cookies()).get('session').value;
     let redisClient = await getRedisClient()
         .on('error', err => console.log('Redis Client Error', err))
         .connect();

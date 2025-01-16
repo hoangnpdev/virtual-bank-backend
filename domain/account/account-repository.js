@@ -42,3 +42,27 @@ export async function createAccount(accountName, password) {
         await client.end();
     }
 }
+
+export async function updateBalance(origin_account, destination_account, amount) {
+    const client = databaseConfig.getPostgresClient();
+    await client.connect();
+    try {
+        await client.query('begin');
+        await client.query(`
+            update virtual_bank.account 
+            set balance = balance - $1 
+            where account_name=$2`,
+            [amount, origin_account]);
+        await client.query(`
+            update virtual_bank.account 
+            set balance = balance + $1 
+            where account_name=$2`,
+            [amount, destination_account]);
+        await client.query(`commit`);
+    } catch (err) {
+        await client.query('rollback');
+        throw err;
+    } finally {
+        await client.end();
+    }
+}
