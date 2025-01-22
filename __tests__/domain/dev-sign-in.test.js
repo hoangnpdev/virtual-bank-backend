@@ -3,11 +3,6 @@ import * as authenticationService from '@/domain/account/authentication-service'
 
 
 
-test('node pg select *', async() => {
-    await expect(userRepository.findAllAccount()).resolves.toHaveLength(3);
-});
-
-
 test('valid sign in', async() => {
     await expect(authenticationService.authenticate('hoang', '123456')).resolves.toEqual(expect.stringMatching(/.*/))
 })

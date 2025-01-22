@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest "
+    "test": "jest",
+    "test:be": "jest --config=jest-node.config.js"
   },
   "dependencies": {
     "@types/jest": "^29.5.14",

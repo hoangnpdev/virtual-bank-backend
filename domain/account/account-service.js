@@ -17,7 +17,6 @@ export async function createAccount(userInfo) {
 
 export async function transferMoney(transaction) {
     let currentUser = await authenticationService.currentUser();
-    console.log(currentUser);
     await accountRepository.updateBalance(currentUser, transaction.destination, transaction.amount);
     return {
         origin: currentUser,

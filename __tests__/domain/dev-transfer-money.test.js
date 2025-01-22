@@ -1,7 +1,7 @@
 
 import * as accountService from '@/domain/account/account-service'
-import * as authenticateService from "../domain/account/authentication-service";
-jest.mock("../domain/account/authentication-service");
+import * as authenticateService from "@/domain/account/authentication-service";
+jest.mock("@/domain/account/authentication-service");
 
 
 test('transfer money, success', async() => {
