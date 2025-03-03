@@ -1,0 +1,38 @@
+{
+  "name": "virtual-bank-backend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "jest --detectOpenHandles"
+  },
+  "dependencies": {
+    "@types/jest": "^29.5.14",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "bootstrap": "^5.3.3",
+    "cookie": "^1.0.2",
+    "next": "15.1.1",
+    "pg": "^8.13.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.54.2",
+    "redis": "^4.7.0",
+    "uuid": "^11.0.3",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.1",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "ts-node": "^10.9.2"
+  }
+}
